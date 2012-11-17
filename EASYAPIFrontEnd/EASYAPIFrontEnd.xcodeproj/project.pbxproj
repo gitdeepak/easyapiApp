@@ -20,6 +20,8 @@
 		0A5B0F9D16581BCD008F8DEE /* EAPIViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B0F9B16581BCD008F8DEE /* EAPIViewController.xib */; };
 		77BDA059165836C2005FE47B /* logoeasyapi.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BDA058165836C2005FE47B /* logoeasyapi.png */; };
 		77BDA05C1658371D005FE47B /* logoeasyapi-144x144.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BDA05B1658371D005FE47B /* logoeasyapi-144x144.png */; };
+		77BDA05F16583ADC005FE47B /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BDA05E16583ADC005FE47B /* Default-Portrait~ipad.png */; };
+		77BDA06116583B1E005FE47B /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BDA06016583B1E005FE47B /* Default-Portrait@2x~ipad.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		0A5B0F9C16581BCD008F8DEE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/EAPIViewController.xib; sourceTree = "<group>"; };
 		77BDA058165836C2005FE47B /* logoeasyapi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoeasyapi.png; path = ../logoeasyapi.png; sourceTree = "<group>"; };
 		77BDA05B1658371D005FE47B /* logoeasyapi-144x144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logoeasyapi-144x144.png"; path = "../logoeasyapi-144x144.png"; sourceTree = "<group>"; };
+		77BDA05E16583ADC005FE47B /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait~ipad.png"; path = "../Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		77BDA06016583B1E005FE47B /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait@2x~ipad.png"; path = "../Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 		77BDA05D16583730005FE47B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				77BDA06016583B1E005FE47B /* Default-Portrait@2x~ipad.png */,
+				77BDA05E16583ADC005FE47B /* Default-Portrait~ipad.png */,
 				77BDA05B1658371D005FE47B /* logoeasyapi-144x144.png */,
 				77BDA058165836C2005FE47B /* logoeasyapi.png */,
 			);
@@ -180,6 +186,8 @@
 				0A5B0F9D16581BCD008F8DEE /* EAPIViewController.xib in Resources */,
 				77BDA059165836C2005FE47B /* logoeasyapi.png in Resources */,
 				77BDA05C1658371D005FE47B /* logoeasyapi-144x144.png in Resources */,
+				77BDA05F16583ADC005FE47B /* Default-Portrait~ipad.png in Resources */,
+				77BDA06116583B1E005FE47B /* Default-Portrait@2x~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
