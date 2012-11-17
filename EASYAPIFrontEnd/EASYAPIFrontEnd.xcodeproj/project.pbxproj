@@ -18,6 +18,8 @@
 		0A5B0F9716581BCD008F8DEE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B0F9616581BCD008F8DEE /* Default-568h@2x.png */; };
 		0A5B0F9A16581BCD008F8DEE /* EAPIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B0F9916581BCD008F8DEE /* EAPIViewController.m */; };
 		0A5B0F9D16581BCD008F8DEE /* EAPIViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B0F9B16581BCD008F8DEE /* EAPIViewController.xib */; };
+		77BDA059165836C2005FE47B /* logoeasyapi.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BDA058165836C2005FE47B /* logoeasyapi.png */; };
+		77BDA05C1658371D005FE47B /* logoeasyapi-144x144.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BDA05B1658371D005FE47B /* logoeasyapi-144x144.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		0A5B0F9816581BCD008F8DEE /* EAPIViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EAPIViewController.h; sourceTree = "<group>"; };
 		0A5B0F9916581BCD008F8DEE /* EAPIViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EAPIViewController.m; sourceTree = "<group>"; };
 		0A5B0F9C16581BCD008F8DEE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/EAPIViewController.xib; sourceTree = "<group>"; };
+		77BDA058165836C2005FE47B /* logoeasyapi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoeasyapi.png; path = ../logoeasyapi.png; sourceTree = "<group>"; };
+		77BDA05B1658371D005FE47B /* logoeasyapi-144x144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logoeasyapi-144x144.png"; path = "../logoeasyapi-144x144.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 		0A5B0F8616581BCD008F8DEE /* EASYAPIFrontEnd */ = {
 			isa = PBXGroup;
 			children = (
+				77BDA05D16583730005FE47B /* Images */,
 				0A5B0F8F16581BCD008F8DEE /* EAPIAppDelegate.h */,
 				0A5B0F9016581BCD008F8DEE /* EAPIAppDelegate.m */,
 				0A5B0F9816581BCD008F8DEE /* EAPIViewController.h */,
@@ -105,6 +110,15 @@
 				0A5B0F9616581BCD008F8DEE /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		77BDA05D16583730005FE47B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				77BDA05B1658371D005FE47B /* logoeasyapi-144x144.png */,
+				77BDA058165836C2005FE47B /* logoeasyapi.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +178,8 @@
 				0A5B0F9516581BCD008F8DEE /* Default@2x.png in Resources */,
 				0A5B0F9716581BCD008F8DEE /* Default-568h@2x.png in Resources */,
 				0A5B0F9D16581BCD008F8DEE /* EAPIViewController.xib in Resources */,
+				77BDA059165836C2005FE47B /* logoeasyapi.png in Resources */,
+				77BDA05C1658371D005FE47B /* logoeasyapi-144x144.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +309,7 @@
 				0A5B0FA216581BCD008F8DEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
