@@ -60,9 +60,9 @@
     UITextField *keyField = (UITextField *)[self viewWithTag:kKeyTag];
     UITextField *valueField = (UITextField *)[self viewWithTag:kValueTag];
     if(self.currentType == DictionaryViewType)
-        return [NSDictionary dictionaryWithObjectsAndKeys:@"tuple", @"type", keyField.text, @"key", valueField.text, @"value", nil];
+        return [NSDictionary dictionaryWithObjectsAndKeys:@"tuple", @"type", keyField.text == nil ? @" " : keyField.text, @"key", valueField.text == nil ? @" " : valueField.text, @"value", nil];
     else if(self.currentType == ArrayViewType)
-         return [NSDictionary dictionaryWithObjectsAndKeys:@"value", @"type", keyField.text, @"value", nil];
+        return [NSDictionary dictionaryWithObjectsAndKeys:@"value", @"type", keyField.text == nil ? @" " : keyField.text, @"value", nil];
     else
         return [NSDictionary dictionaryWithObjectsAndKeys: nil];
 }   

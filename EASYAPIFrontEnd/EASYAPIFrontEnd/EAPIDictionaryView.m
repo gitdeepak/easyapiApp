@@ -160,7 +160,7 @@
         }
     }
     
-    [overAllArray addObject:[NSDictionary dictionaryWithObjectsAndKeys:self.currentType == ArrayViewType ? @"array" : @"dictionary", @"type", field.text, @"key", entryArray, @"value", nil]];
+    [overAllArray addObject:[NSDictionary dictionaryWithObjectsAndKeys:self.currentType == ArrayViewType ? @"array" : @"dictionary", @"type", field.text == nil ? @" " : field.text, @"key", entryArray, @"value", nil]];
     
     
     return [overAllArray autorelease];
