@@ -12,6 +12,13 @@
 		0A2ECB441658677D002BC099 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A2ECB431658677D002BC099 /* SystemConfiguration.framework */; };
 		0A2ECB4A16588456002BC099 /* EAPICreateCustomObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2ECB4916588456002BC099 /* EAPICreateCustomObjectViewController.m */; };
 		0A2ECB4F1658AD28002BC099 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2ECB4E1658AD28002BC099 /* UIColor+Hex.m */; };
+		0A2ECB621658CC7D002BC099 /* clear_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A2ECB611658CC7D002BC099 /* clear_button.png */; };
+		0A2ECB641658CC96002BC099 /* submit_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A2ECB631658CC96002BC099 /* submit_button.png */; };
+		0A2ECB671658F37C002BC099 /* EAPICustomObjectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2ECB661658F37C002BC099 /* EAPICustomObjectView.m */; };
+		0A2ECB6916590F55002BC099 /* easy_api_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A2ECB6816590F55002BC099 /* easy_api_logo.png */; };
+		0A2ECB6D16591438002BC099 /* EAPIToolbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2ECB6C16591438002BC099 /* EAPIToolbarView.m */; };
+		0A2ECB70165918B8002BC099 /* EAPIBottomToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2ECB6F165918B8002BC099 /* EAPIBottomToolbar.m */; };
+		0A2ECB7316592531002BC099 /* EAPICustomObjectToolbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2ECB7216592530002BC099 /* EAPICustomObjectToolbarView.m */; };
 		0A5B0F8116581BCD008F8DEE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5B0F8016581BCD008F8DEE /* UIKit.framework */; };
 		0A5B0F8316581BCD008F8DEE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5B0F8216581BCD008F8DEE /* Foundation.framework */; };
 		0A5B0F8516581BCD008F8DEE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5B0F8416581BCD008F8DEE /* CoreGraphics.framework */; };
@@ -39,6 +46,17 @@
 		0A2ECB4916588456002BC099 /* EAPICreateCustomObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAPICreateCustomObjectViewController.m; sourceTree = "<group>"; };
 		0A2ECB4D1658AD28002BC099 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		0A2ECB4E1658AD28002BC099 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		0A2ECB611658CC7D002BC099 /* clear_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clear_button.png; sourceTree = "<group>"; };
+		0A2ECB631658CC96002BC099 /* submit_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = submit_button.png; sourceTree = "<group>"; };
+		0A2ECB651658F37C002BC099 /* EAPICustomObjectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAPICustomObjectView.h; sourceTree = "<group>"; };
+		0A2ECB661658F37C002BC099 /* EAPICustomObjectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAPICustomObjectView.m; sourceTree = "<group>"; };
+		0A2ECB6816590F55002BC099 /* easy_api_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = easy_api_logo.png; sourceTree = "<group>"; };
+		0A2ECB6B16591438002BC099 /* EAPIToolbarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAPIToolbarView.h; sourceTree = "<group>"; };
+		0A2ECB6C16591438002BC099 /* EAPIToolbarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAPIToolbarView.m; sourceTree = "<group>"; };
+		0A2ECB6E165918B8002BC099 /* EAPIBottomToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAPIBottomToolbar.h; sourceTree = "<group>"; };
+		0A2ECB6F165918B8002BC099 /* EAPIBottomToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAPIBottomToolbar.m; sourceTree = "<group>"; };
+		0A2ECB7116592530002BC099 /* EAPICustomObjectToolbarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAPICustomObjectToolbarView.h; sourceTree = "<group>"; };
+		0A2ECB7216592530002BC099 /* EAPICustomObjectToolbarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAPICustomObjectToolbarView.m; sourceTree = "<group>"; };
 		0A5B0F7C16581BCD008F8DEE /* EASYAPIFrontEnd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EASYAPIFrontEnd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A5B0F8016581BCD008F8DEE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0A5B0F8216581BCD008F8DEE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -99,6 +117,19 @@
 			name = "Endpoint Creation";
 			sourceTree = "<group>";
 		};
+		0A2ECB6A16591427002BC099 /* Toolbar */ = {
+			isa = PBXGroup;
+			children = (
+				0A2ECB6B16591438002BC099 /* EAPIToolbarView.h */,
+				0A2ECB6C16591438002BC099 /* EAPIToolbarView.m */,
+				0A2ECB6E165918B8002BC099 /* EAPIBottomToolbar.h */,
+				0A2ECB6F165918B8002BC099 /* EAPIBottomToolbar.m */,
+				0A2ECB7116592530002BC099 /* EAPICustomObjectToolbarView.h */,
+				0A2ECB7216592530002BC099 /* EAPICustomObjectToolbarView.m */,
+			);
+			name = Toolbar;
+			sourceTree = "<group>";
+		};
 		0A5B0F7116581BCD008F8DEE = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +161,7 @@
 		0A5B0F8616581BCD008F8DEE /* EASYAPIFrontEnd */ = {
 			isa = PBXGroup;
 			children = (
+				0A2ECB6A16591427002BC099 /* Toolbar */,
 				0A2ECB4C165884F9002BC099 /* Endpoint Creation */,
 				0A2ECB4B165884E6002BC099 /* CustomObjects */,
 				0A5B0FAD16581C98008F8DEE /* Adding */,
@@ -142,6 +174,9 @@
 				0A2ECB3D165861B4002BC099 /* JSONKit.m */,
 				0A2ECB401658664B002BC099 /* ESPNNetworkingManager.h */,
 				0A2ECB411658664B002BC099 /* ESPNNetworkingManager.m */,
+				0A2ECB6816590F55002BC099 /* easy_api_logo.png */,
+				0A2ECB631658CC96002BC099 /* submit_button.png */,
+				0A2ECB611658CC7D002BC099 /* clear_button.png */,
 				0A5B0F8716581BCD008F8DEE /* Supporting Files */,
 			);
 			path = EASYAPIFrontEnd;
@@ -168,6 +203,8 @@
 				0A5B0FA416581C5D008F8DEE /* EAPIKeyValueView.m */,
 				0A5B0FA716581C7D008F8DEE /* EAPIDictionaryView.h */,
 				0A5B0FA816581C7D008F8DEE /* EAPIDictionaryView.m */,
+				0A2ECB651658F37C002BC099 /* EAPICustomObjectView.h */,
+				0A2ECB661658F37C002BC099 /* EAPICustomObjectView.m */,
 			);
 			name = "Object Views";
 			sourceTree = "<group>";
@@ -240,6 +277,9 @@
 				0A5B0F9516581BCD008F8DEE /* Default@2x.png in Resources */,
 				0A5B0F9716581BCD008F8DEE /* Default-568h@2x.png in Resources */,
 				0A5B0F9D16581BCD008F8DEE /* EAPIViewController.xib in Resources */,
+				0A2ECB621658CC7D002BC099 /* clear_button.png in Resources */,
+				0A2ECB641658CC96002BC099 /* submit_button.png in Resources */,
+				0A2ECB6916590F55002BC099 /* easy_api_logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +301,10 @@
 				0A2ECB421658664B002BC099 /* ESPNNetworkingManager.m in Sources */,
 				0A2ECB4A16588456002BC099 /* EAPICreateCustomObjectViewController.m in Sources */,
 				0A2ECB4F1658AD28002BC099 /* UIColor+Hex.m in Sources */,
+				0A2ECB671658F37C002BC099 /* EAPICustomObjectView.m in Sources */,
+				0A2ECB6D16591438002BC099 /* EAPIToolbarView.m in Sources */,
+				0A2ECB70165918B8002BC099 /* EAPIBottomToolbar.m in Sources */,
+				0A2ECB7316592531002BC099 /* EAPICustomObjectToolbarView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

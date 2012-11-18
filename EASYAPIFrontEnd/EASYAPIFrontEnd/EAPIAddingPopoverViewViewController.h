@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+
+
 @protocol AddingPopoverProtocol <NSObject>
 
 -(void)itemSelectedWithName:(NSString *)name;
@@ -17,5 +19,9 @@
 @interface EAPIAddingPopoverViewViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property(nonatomic, assign)id<AddingPopoverProtocol>delegate;
+@property(nonatomic, retain)NSMutableArray *customArray;
+@property(nonatomic, retain)NSArray *savedArray;
+
++(EAPIAddingPopoverViewViewController *)sharedInstance;
 
 @end

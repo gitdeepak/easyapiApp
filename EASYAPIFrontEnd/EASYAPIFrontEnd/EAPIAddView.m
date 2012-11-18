@@ -43,8 +43,8 @@
     EAPIAddingPopoverViewViewController *popoverView = [[EAPIAddingPopoverViewViewController alloc]init];
     popoverView.delegate = self;
     controller = [[UIPopoverController alloc]initWithContentViewController:popoverView];
-    controller.popoverContentSize = popoverView.view.frame.size;
-    [controller presentPopoverFromRect:CGRectMake(45, self.center.y-15, 1, 1) inView:[self getTopViewController].view permittedArrowDirections:nil animated:YES];
+    controller.popoverContentSize = CGSizeMake(400, 400);
+    [controller presentPopoverFromRect:CGRectMake(384, 512, 1, 1) inView:[self topMostController].view permittedArrowDirections:nil animated:YES];
 }
 
 -(void)itemSelectedWithName:(NSString *)name
@@ -60,9 +60,15 @@
     [super dealloc];
 }
 
--(UIViewController *)getTopViewController
+- (UIViewController*)topMostController
 {
-    return ((EAPIAppDelegate *)[[UIApplication sharedApplication] delegate]).viewController;
+    UIViewController *topController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    
+    while (topController.presentedViewController) {
+        topController = topController.presentedViewController;
+    }
+    
+    return topController;
 }
 
 /*

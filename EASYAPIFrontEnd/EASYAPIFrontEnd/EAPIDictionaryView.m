@@ -21,6 +21,7 @@
         
         UITextField *keyField = [[UITextField alloc]initWithFrame:CGRectMake(0, currentYOffset, 150, 44)];
         [keyField setBorderStyle:UITextBorderStyleBezel];
+        keyField.backgroundColor = [UIColor whiteColor];
         keyField.tag = 53211;
         [self addSubview:keyField];
         [keyField release];

@@ -9,6 +9,8 @@
 #import "EAPICreateCustomObjectViewController.h"
 #import "JSONKit.h"
 #import "ESPNNetworkingManager.h"
+#import "EAPICustomObjectView.h"
+#import "UIColor+Hex.h"
 
 @interface EAPICreateCustomObjectViewController ()
 
@@ -20,38 +22,38 @@
 {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor colorWithHexString:@"DDDDDD"];
     
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [button setTitle:@"CREATE" forState:UIControlStateNormal];
-    button.frame = CGRectMake(self.view.frame.size.width-200, 0, 200, 50);
-    [button addTarget:self action:@selector(submitButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button];
+    EAPICustomObjectToolbarView *toolbar = [[EAPICustomObjectToolbarView alloc]initWithFrame:CGRectMake(0, 0, 768, 50)];
+    [self.view addSubview:toolbar];
+    toolbar.delegate = self;
+    [toolbar release];
     
-    button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [button setTitle:@"DISMISS" forState:UIControlStateNormal];
-    button.frame = CGRectMake(self.view.frame.size.width-300, 0, 100, 50);
-    [button addTarget:self action:@selector(dismissButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button];
+    UIScrollView *scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 50, self.view.frame.size.width, self.view.frame.size.height-50)];
+    scrollView.tag = 7777;
+    contentView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, scrollView.frame.size.width, scrollView.frame.size.height)];
+    [scrollView addSubview:contentView];
+    scrollView.contentSize = contentView.frame.size;
+    [self.view addSubview:scrollView];
+    [scrollView release];
     
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(15, 15, 20, 40)];
+    label.backgroundColor = [UIColor clearColor];
+    label.text = @"{";
+    [contentView addSubview:label];
+    [label release];
     
     currentYOffset = 50;
     
-    EAPIAddView *addView = [[EAPIAddView alloc]initWithFrame:CGRectMake(25, currentYOffset, 50, 50) andType:DictionaryViewType];
+    EAPIAddView *addView = [[EAPIAddView alloc]initWithFrame:CGRectMake(25, currentYOffset, 50, 50) andType:RootTypeView];
     addView.tag = 5432;
     addView.delegate = self;
-    [self.view addSubview:addView];
+    [contentView addSubview:addView];
     [addView release];
     
-	// Do any additional setup after loading the view, typically from a nib.
-}
 
--(IBAction)dismissButtonPressed:(id)sender
-{
-    [self dismissViewControllerAnimated:YES completion:^(void)
-    {
-        
-    }];
+    
+	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,7 +66,7 @@
 {
     if([name isEqualToString:@"KeyPair"])
     {
-        [self.view addSubview:[self createKeyValueViewAtOrigin:CGPointMake(25, currentYOffset)]];
+        [contentView addSubview:[self createKeyValueViewAtOrigin:CGPointMake(25, currentYOffset)]];
         currentYOffset+= 50;
         [self updateAddViewForOrigin:CGPointMake(0, currentYOffset)];
         
@@ -73,7 +75,7 @@
     {
         EAPIDictionaryView *view = [self createDictionaryViewAtOrigin:CGPointMake(25, currentYOffset) andType:DictionaryViewType];
         view.delegate = self;
-        [self.view addSubview:view];
+        [contentView addSubview:view];
         currentYOffset += view.frame.size.height;
         [self updateAddViewForOrigin:CGPointMake(0, currentYOffset)];
     }
@@ -81,9 +83,25 @@
     {
         EAPIDictionaryView *view = [self createDictionaryViewAtOrigin:CGPointMake(25, currentYOffset) andType:ArrayViewType];
         view.delegate = self;
-        [self.view addSubview:view];
+        [contentView addSubview:view];
         currentYOffset += view.frame.size.height;
         [self updateAddViewForOrigin:CGPointMake(0, currentYOffset)];
+    }
+    else
+    {
+        NSArray *array = [EAPIAddingPopoverViewViewController sharedInstance].savedArray;
+        
+        for(NSDictionary *dict in array)
+        {
+            if([[dict valueForKey:@"name"] isEqualToString:name])
+            {
+                EAPICustomObjectView *view = [[EAPICustomObjectView alloc]initWithFrame:CGRectMake(25, currentYOffset, 200, 70) andName:name];
+                [contentView addSubview:view];
+                currentYOffset+= view.frame.size.height;
+                [self updateAddViewForOrigin:CGPointMake(0, currentYOffset)];
+            }
+        }
+        
     }
 }
 
@@ -109,18 +127,26 @@
 
 -(void)addedToHeight:(int)height
 {
-    UIView *addView = [self.view viewWithTag:5432];
+    UIView *addView = [contentView viewWithTag:5432];
     currentYOffset+= height;
+    
+    if(currentYOffset >= contentView.frame.size.height-30)
+    {
+        contentView.frame = CGRectMake(contentView.frame.origin.x, contentView.frame.origin.y, contentView.frame.size.width, contentView.frame.size.height+(currentYOffset - contentView.frame.size.height+30));
+        UIScrollView *scrollView = (UIScrollView *)[self.view viewWithTag:7777];
+        scrollView.contentSize = CGSizeMake(scrollView.contentSize.width, contentView.frame.size.height+30);
+    }
+    
     [self updateAddViewForOrigin:CGPointMake(addView.frame.origin.x, addView.frame.origin.y+height)];
 }
 
--(NSDictionary *)getCurrentJSONRepresentation
+-(NSDictionary *)getCurrentJSONRepresentationWithName:(NSString *)name
 {
     
     
     NSMutableArray *array = [[NSMutableArray alloc]init];
     
-    for(UIView *view in self.view.subviews)
+    for(UIView *view in contentView.subviews)
     {
         if([view isKindOfClass:[EAPIDictionaryView class]])
         {
@@ -138,17 +164,20 @@
         }
     }
     
-    NSDictionary *returnDict = [[NSDictionary alloc]initWithObjectsAndKeys:@"endpoint", @"type", array, @"value", @"MYFIRSTENDPOINT", @"key", [self getEPID], @"projectID", nil];
+    NSDictionary *returnDict = [[NSDictionary alloc]initWithObjectsAndKeys:@"blueprint", @"type", array, @"value", @"projectID", @"1", name, @"key", nil];
     
     return [returnDict autorelease];
     
 }
 
--(IBAction)submitButtonPressed:(id)sender
+#pragma mark -
+#pragma mark Actions
+
+-(IBAction)submitButtonPressed:(NSString *)name
 {
-    NSString *url = @"http://easy-api.herokuapp.com/customObject";
+    NSString *url = [NSString stringWithFormat:@"http://api.easyapi.co/endpoints/create?name=%@&projectid=1", name];
     
-    NSString *body = [NSString stringWithFormat:@"blob=%@",[[self getCurrentJSONRepresentation] JSONString] ];
+    NSString *body = [NSString stringWithFormat:@"blob=%@",[[self getCurrentJSONRepresentationWithName:name] JSONString] ];
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:url]];
     
@@ -166,11 +195,55 @@
          NSString *result = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
          NSLog(@"Recieved Result:%@", result);
      }];
+    
+    
 }
+
+-(IBAction)clearButtonPressed:(id)sender
+{
+    for(UIView *view in contentView.subviews)
+    {
+        [view removeFromSuperview];
+    }
+    currentYOffset = 50;
+    [self viewDidLoad];
+}
+
+-(IBAction)dismissButtonPressed:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:^(void)
+    {
+        
+    }];
+}
+
+#pragma mark -
+#pragma mark Utilities
 
 -(NSString *)getEPID
 {
     return @"1";
+}
+
+#pragma mark -
+#pragma mark Toolbar Protocol
+
+-(void)cancelButtonPressed
+{
+    [self dismissViewControllerAnimated:YES completion:^(void)
+    {
+        
+    }];
+}
+
+-(void)submitButtonPressedWithName:(NSString *)name
+{
+    [self submitButtonPressed:name];
+}
+
+-(void)clearButtonPressed
+{
+    [self clearButtonPressed:nil];
 }
 
 

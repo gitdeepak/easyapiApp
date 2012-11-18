@@ -9,7 +9,11 @@
 #import "EAPIViewController.h"
 #import "JSONKit.h"
 #import "ESPNNetworkingManager.h"
+#import "EAPICustomObjectView.h"
+#import "EAPIBottomToolbar.h"
 #import "UIColor+Hex.h"
+
+#define kToolbarTag 32221
 
 @interface EAPIViewController ()
 
@@ -23,19 +27,14 @@
     
     self.view.backgroundColor = [UIColor colorWithHexString:@"DDDDDD"];
     
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [button setTitle:@"SUBMIT" forState:UIControlStateNormal];
-    button.frame = CGRectMake(self.view.frame.size.width-200, 0, 200, 50);
-    [button addTarget:self action:@selector(submitButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button];
+    EAPIToolbarView *toolbar = [[EAPIToolbarView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
+    toolbar.tag = kToolbarTag;
+    [self.view addSubview:toolbar];
+    toolbar.delegate = self;
+    [toolbar release];
     
-    button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [button setTitle:@"CLEAR" forState:UIControlStateNormal];
-    button.frame = CGRectMake(self.view.frame.size.width-300, 0, 100, 50);
-    [button addTarget:self action:@selector(clearButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button];
     
-    UIScrollView *scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    UIScrollView *scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 50, self.view.frame.size.width, self.view.frame.size.height)];
     scrollView.tag = 7777;
     contentView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, scrollView.frame.size.width, scrollView.frame.size.height)];
     [scrollView addSubview:contentView];
@@ -43,13 +42,13 @@
     [self.view addSubview:scrollView];
     [scrollView release];
     
-    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(15, 15, 20, 40)];
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(15, 0, 20, 40)];
     label.backgroundColor = [UIColor clearColor];
     label.text = @"{";
     [contentView addSubview:label];
     [label release];
     
-    currentYOffset = 50;
+    currentYOffset = 40;
     
     EAPIAddView *addView = [[EAPIAddView alloc]initWithFrame:CGRectMake(25, currentYOffset, 50, 50) andType:RootTypeView];
     addView.tag = 5432;
@@ -91,13 +90,21 @@
         currentYOffset += view.frame.size.height;
         [self updateAddViewForOrigin:CGPointMake(0, currentYOffset)];
     }
-    else if([name isEqualToString:@"Custom Object"])
+    else
     {
-        EAPICreateCustomObjectViewController *customObject = [[[EAPICreateCustomObjectViewController alloc]init] autorelease];
-        [self presentViewController:customObject animated:YES completion:^(void)
+        NSArray *array = [EAPIAddingPopoverViewViewController sharedInstance].savedArray;
+        
+        for(NSDictionary *dict in array)
         {
-            NSLog(@"dismissed");
-        }];
+            if([[dict valueForKey:@"name"] isEqualToString:name])
+            {
+                EAPICustomObjectView *view = [[EAPICustomObjectView alloc]initWithFrame:CGRectMake(25, currentYOffset, 200, 70) andName:name];
+                [contentView addSubview:view];
+                currentYOffset+= view.frame.size.height;
+                [self updateAddViewForOrigin:CGPointMake(0, currentYOffset)];
+            }
+        }
+        
     }
 }
 
@@ -136,7 +143,7 @@
     [self updateAddViewForOrigin:CGPointMake(addView.frame.origin.x, addView.frame.origin.y+height)];
 }
 
--(NSDictionary *)getCurrentJSONRepresentation
+-(NSDictionary *)getCurrentJSONRepresentationWithName:(NSString *)name
 {
     
     
@@ -158,22 +165,35 @@
             EAPIKeyValueView *keyView = (EAPIKeyValueView *)view;
             [array addObject:[keyView getCurrentValues]];
         }
+        if([view isKindOfClass:[EAPICustomObjectView class]])
+        {
+            EAPICustomObjectView *custom = (EAPICustomObjectView *)view;
+            [array addObject:[custom getCurrentValues]];
+        }
     }
     
-    NSDictionary *returnDict = [[NSDictionary alloc]initWithObjectsAndKeys:@"endpoint", @"type", array, @"value", @"MYFIRSTENDPOINT", @"key", [self getEPID], @"projectID", nil];
+    NSDictionary *returnDict = [[NSDictionary alloc]initWithObjectsAndKeys:@"endpoint", @"type", array, @"value", @"key", name, @"projectid", @"1", nil];
     
     return [returnDict autorelease];
     
 }
 
 #pragma mark -
-#pragma mark Actions
+#pragma mark Utilities
 
--(IBAction)submitButtonPressed:(id)sender
+-(NSString *)getEPID
 {
-    NSString *url = @"http://easy-api.herokuapp.com/test/body";
+    return @"1";
+}
+
+#pragma mark -
+#pragma mark Toolbar Utilities
+
+-(void)submitButtonPressedWithName:(NSString *)name;
+{
+    NSString *url = [NSString stringWithFormat:@"http://api.easyapi.co/endpoints/create?name=%@&projectid=1", name];
     
-    NSString *body = [NSString stringWithFormat:@"blob=%@",[[self getCurrentJSONRepresentation] JSONString] ];
+    NSString *body = [NSString stringWithFormat:@"blob=%@",[[self getCurrentJSONRepresentationWithName:name] JSONString] ];
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:url]];
     
@@ -186,16 +206,25 @@
     [request setValue:[NSString stringWithFormat:@"%d", [body length]] forHTTPHeaderField:@"Content-Length"];
     
     [ESPNNetworkingManager loadDataFromRequest:request withBlock:^(NSData *data, NSError *error)
-    {
-        NSLog(@"Sent Data:%@", body);
-        NSString *result = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-        NSLog(@"Recieved Result:%@", result);
-    }];
-    
-    
+     {
+         NSLog(@"Sent Data:%@", body);
+         NSString *result = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+         
+         NSDictionary *dict = [result objectFromJSONString];
+         
+         NSLog(@"Recieved Result:%@", result);
+         
+         EAPIBottomToolbar *bottomToolbar = [[EAPIBottomToolbar alloc]initWithFrame:CGRectMake(0, 1024, 768, 50) andReadURL:[NSString stringWithFormat:@"http://api.easyapi.co/endpoints/render?id=%@", [dict objectForKey:@"id"]] andWriteURL:@""];
+         [self.view addSubview:bottomToolbar];
+         [UIView animateWithDuration:1 animations:^(void)
+          {
+              bottomToolbar.frame = CGRectMake(0, 1024-50-20, 768, 50);
+          }];
+         
+     }];
 }
 
--(IBAction)clearButtonPressed:(id)sender
+-(void)clearButtonPressed
 {
     for(UIView *view in contentView.subviews)
     {
@@ -203,15 +232,21 @@
     }
     currentYOffset = 50;
     [self viewDidLoad];
+    
+    EAPIToolbarView *toolbar = (EAPIToolbarView *)[self.view viewWithTag:kToolbarTag];
+    [UIView animateWithDuration:1 animations:^(void)
+     {
+         toolbar.frame = CGRectMake(0, 1024, toolbar.frame.size.width, 50);
+     }];
 }
 
-#pragma mark -
-#pragma mark Utilities
-
--(NSString *)getEPID
+-(void)createCustomObjectPressed
 {
-    return @"1";
+    EAPICreateCustomObjectViewController *customObject = [[[EAPICreateCustomObjectViewController alloc]init] autorelease];
+    [self presentViewController:customObject animated:YES completion:^(void)
+     {
+         //NSLog(@"dismissed");
+     }];
 }
-
 
 @end

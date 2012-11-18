@@ -10,10 +10,13 @@
 #import "EAPIAddView.h"
 #import "EAPIKeyValueView.h"
 #import "EAPIDictionaryView.h"
+#import "EAPICustomObjectToolbarView.h"
 
 
-@interface EAPICreateCustomObjectViewController : UIViewController<AddViewProtocol, DictionaryProtocol>
+@interface EAPICreateCustomObjectViewController : UIViewController<AddViewProtocol, DictionaryProtocol, CustomToolbarProtocol>
 {
+    
+    UIView *contentView;
     int currentYOffset;
 }
 
