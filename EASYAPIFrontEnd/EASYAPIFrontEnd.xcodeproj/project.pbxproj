@@ -175,11 +175,8 @@
 		0A5B0F8616581BCD008F8DEE /* EASYAPIFrontEnd */ = {
 			isa = PBXGroup;
 			children = (
-
 				0A2ECB6A16591427002BC099 /* Toolbar */,
-
 				77DB23661658BDBB0097F01A /* Images */,
-
 				0A2ECB4C165884F9002BC099 /* Endpoint Creation */,
 				0A2ECB4B165884E6002BC099 /* CustomObjects */,
 				0A5B0FAD16581C98008F8DEE /* Adding */,
@@ -306,18 +303,15 @@
 				0A5B0F9516581BCD008F8DEE /* Default@2x.png in Resources */,
 				0A5B0F9716581BCD008F8DEE /* Default-568h@2x.png in Resources */,
 				0A5B0F9D16581BCD008F8DEE /* EAPIViewController.xib in Resources */,
-
 				0A2ECB621658CC7D002BC099 /* clear_button.png in Resources */,
 				0A2ECB641658CC96002BC099 /* submit_button.png in Resources */,
 				0A2ECB6916590F55002BC099 /* easy_api_logo.png in Resources */,
-
 				77DB236A1658BE030097F01A /* 1536x2008-frontPageeasyAPI.png in Resources */,
 				77DB236B1658BE030097F01A /* 768x1004-frontPageeasyAPI.png in Resources */,
 				77DB236D1658BE0F0097F01A /* logoeasyapi-144x144.png in Resources */,
 				77DB236F1658BE230097F01A /* Default-Portrait~ipad.png in Resources */,
 				77DB23711658BE2B0097F01A /* Default-Portrait@2x~ipad.png in Resources */,
 				77DB23731658BE570097F01A /* logoeasyapi.png in Resources */,
-
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,10 +415,12 @@
 		0A5B0FA116581BCD008F8DEE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ESPN Enterprises, Inc.";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EASYAPIFrontEnd/EASYAPIFrontEnd-Prefix.pch";
 				INFOPLIST_FILE = "EASYAPIFrontEnd/EASYAPIFrontEnd-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "97976E98-1F3E-4EBF-99EC-9482F17F20D8";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -432,10 +428,12 @@
 		0A5B0FA216581BCD008F8DEE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ESPN Enterprises, Inc.";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EASYAPIFrontEnd/EASYAPIFrontEnd-Prefix.pch";
 				INFOPLIST_FILE = "EASYAPIFrontEnd/EASYAPIFrontEnd-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "97976E98-1F3E-4EBF-99EC-9482F17F20D8";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

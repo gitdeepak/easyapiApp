@@ -194,6 +194,12 @@
          NSLog(@"Sent Data:%@", body);
          NSString *result = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
          NSLog(@"Recieved Result:%@", result);
+         
+         [self dismissViewControllerAnimated:YES completion:^(void)
+          {
+              
+          }];
+         
      }];
     
     
