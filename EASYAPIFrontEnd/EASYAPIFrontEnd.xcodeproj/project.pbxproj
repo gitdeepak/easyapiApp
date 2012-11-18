@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A2ECB3E165861B4002BC099 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2ECB3D165861B4002BC099 /* JSONKit.m */; };
+		0A2ECB421658664B002BC099 /* ESPNNetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2ECB411658664B002BC099 /* ESPNNetworkingManager.m */; };
+		0A2ECB441658677D002BC099 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A2ECB431658677D002BC099 /* SystemConfiguration.framework */; };
+		0A2ECB4A16588456002BC099 /* EAPICreateCustomObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2ECB4916588456002BC099 /* EAPICreateCustomObjectViewController.m */; };
+		0A2ECB4F1658AD28002BC099 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2ECB4E1658AD28002BC099 /* UIColor+Hex.m */; };
 		0A5B0F8116581BCD008F8DEE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5B0F8016581BCD008F8DEE /* UIKit.framework */; };
 		0A5B0F8316581BCD008F8DEE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5B0F8216581BCD008F8DEE /* Foundation.framework */; };
 		0A5B0F8516581BCD008F8DEE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5B0F8416581BCD008F8DEE /* CoreGraphics.framework */; };
@@ -18,13 +23,22 @@
 		0A5B0F9716581BCD008F8DEE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B0F9616581BCD008F8DEE /* Default-568h@2x.png */; };
 		0A5B0F9A16581BCD008F8DEE /* EAPIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B0F9916581BCD008F8DEE /* EAPIViewController.m */; };
 		0A5B0F9D16581BCD008F8DEE /* EAPIViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B0F9B16581BCD008F8DEE /* EAPIViewController.xib */; };
-		77BDA059165836C2005FE47B /* logoeasyapi.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BDA058165836C2005FE47B /* logoeasyapi.png */; };
-		77BDA05C1658371D005FE47B /* logoeasyapi-144x144.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BDA05B1658371D005FE47B /* logoeasyapi-144x144.png */; };
-		77BDA05F16583ADC005FE47B /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BDA05E16583ADC005FE47B /* Default-Portrait~ipad.png */; };
-		77BDA06116583B1E005FE47B /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BDA06016583B1E005FE47B /* Default-Portrait@2x~ipad.png */; };
+		0A5B0FA516581C5D008F8DEE /* EAPIKeyValueView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B0FA416581C5D008F8DEE /* EAPIKeyValueView.m */; };
+		0A5B0FA916581C7D008F8DEE /* EAPIDictionaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B0FA816581C7D008F8DEE /* EAPIDictionaryView.m */; };
+		0A5B0FB016581CAE008F8DEE /* EAPIAddView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B0FAF16581CAE008F8DEE /* EAPIAddView.m */; };
+		0A5B0FB316581CC8008F8DEE /* EAPIAddingPopoverViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B0FB216581CC8008F8DEE /* EAPIAddingPopoverViewViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A2ECB3C165861B4002BC099 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		0A2ECB3D165861B4002BC099 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		0A2ECB401658664B002BC099 /* ESPNNetworkingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPNNetworkingManager.h; sourceTree = "<group>"; };
+		0A2ECB411658664B002BC099 /* ESPNNetworkingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESPNNetworkingManager.m; sourceTree = "<group>"; };
+		0A2ECB431658677D002BC099 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		0A2ECB4816588456002BC099 /* EAPICreateCustomObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAPICreateCustomObjectViewController.h; sourceTree = "<group>"; };
+		0A2ECB4916588456002BC099 /* EAPICreateCustomObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAPICreateCustomObjectViewController.m; sourceTree = "<group>"; };
+		0A2ECB4D1658AD28002BC099 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		0A2ECB4E1658AD28002BC099 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		0A5B0F7C16581BCD008F8DEE /* EASYAPIFrontEnd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EASYAPIFrontEnd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A5B0F8016581BCD008F8DEE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0A5B0F8216581BCD008F8DEE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -41,10 +55,14 @@
 		0A5B0F9816581BCD008F8DEE /* EAPIViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EAPIViewController.h; sourceTree = "<group>"; };
 		0A5B0F9916581BCD008F8DEE /* EAPIViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EAPIViewController.m; sourceTree = "<group>"; };
 		0A5B0F9C16581BCD008F8DEE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/EAPIViewController.xib; sourceTree = "<group>"; };
-		77BDA058165836C2005FE47B /* logoeasyapi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoeasyapi.png; path = ../logoeasyapi.png; sourceTree = "<group>"; };
-		77BDA05B1658371D005FE47B /* logoeasyapi-144x144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logoeasyapi-144x144.png"; path = "../logoeasyapi-144x144.png"; sourceTree = "<group>"; };
-		77BDA05E16583ADC005FE47B /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait~ipad.png"; path = "../Default-Portrait~ipad.png"; sourceTree = "<group>"; };
-		77BDA06016583B1E005FE47B /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait@2x~ipad.png"; path = "../Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
+		0A5B0FA316581C5D008F8DEE /* EAPIKeyValueView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAPIKeyValueView.h; sourceTree = "<group>"; };
+		0A5B0FA416581C5D008F8DEE /* EAPIKeyValueView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAPIKeyValueView.m; sourceTree = "<group>"; };
+		0A5B0FA716581C7D008F8DEE /* EAPIDictionaryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAPIDictionaryView.h; sourceTree = "<group>"; };
+		0A5B0FA816581C7D008F8DEE /* EAPIDictionaryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAPIDictionaryView.m; sourceTree = "<group>"; };
+		0A5B0FAE16581CAE008F8DEE /* EAPIAddView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAPIAddView.h; sourceTree = "<group>"; };
+		0A5B0FAF16581CAE008F8DEE /* EAPIAddView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAPIAddView.m; sourceTree = "<group>"; };
+		0A5B0FB116581CC8008F8DEE /* EAPIAddingPopoverViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAPIAddingPopoverViewViewController.h; sourceTree = "<group>"; };
+		0A5B0FB216581CC8008F8DEE /* EAPIAddingPopoverViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAPIAddingPopoverViewViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A2ECB441658677D002BC099 /* SystemConfiguration.framework in Frameworks */,
 				0A5B0F8116581BCD008F8DEE /* UIKit.framework in Frameworks */,
 				0A5B0F8316581BCD008F8DEE /* Foundation.framework in Frameworks */,
 				0A5B0F8516581BCD008F8DEE /* CoreGraphics.framework in Frameworks */,
@@ -61,9 +80,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A2ECB4B165884E6002BC099 /* CustomObjects */ = {
+			isa = PBXGroup;
+			children = (
+				0A2ECB4816588456002BC099 /* EAPICreateCustomObjectViewController.h */,
+				0A2ECB4916588456002BC099 /* EAPICreateCustomObjectViewController.m */,
+			);
+			name = CustomObjects;
+			sourceTree = "<group>";
+		};
+		0A2ECB4C165884F9002BC099 /* Endpoint Creation */ = {
+			isa = PBXGroup;
+			children = (
+				0A5B0F9816581BCD008F8DEE /* EAPIViewController.h */,
+				0A5B0F9916581BCD008F8DEE /* EAPIViewController.m */,
+				0A5B0F9B16581BCD008F8DEE /* EAPIViewController.xib */,
+			);
+			name = "Endpoint Creation";
+			sourceTree = "<group>";
+		};
 		0A5B0F7116581BCD008F8DEE = {
 			isa = PBXGroup;
 			children = (
+				0A2ECB431658677D002BC099 /* SystemConfiguration.framework */,
 				0A5B0F8616581BCD008F8DEE /* EASYAPIFrontEnd */,
 				0A5B0F7F16581BCD008F8DEE /* Frameworks */,
 				0A5B0F7D16581BCD008F8DEE /* Products */,
@@ -91,12 +130,18 @@
 		0A5B0F8616581BCD008F8DEE /* EASYAPIFrontEnd */ = {
 			isa = PBXGroup;
 			children = (
-				77BDA05D16583730005FE47B /* Images */,
+				0A2ECB4C165884F9002BC099 /* Endpoint Creation */,
+				0A2ECB4B165884E6002BC099 /* CustomObjects */,
+				0A5B0FAD16581C98008F8DEE /* Adding */,
+				0A5B0FA616581C63008F8DEE /* Object Views */,
 				0A5B0F8F16581BCD008F8DEE /* EAPIAppDelegate.h */,
 				0A5B0F9016581BCD008F8DEE /* EAPIAppDelegate.m */,
-				0A5B0F9816581BCD008F8DEE /* EAPIViewController.h */,
-				0A5B0F9916581BCD008F8DEE /* EAPIViewController.m */,
-				0A5B0F9B16581BCD008F8DEE /* EAPIViewController.xib */,
+				0A2ECB4D1658AD28002BC099 /* UIColor+Hex.h */,
+				0A2ECB4E1658AD28002BC099 /* UIColor+Hex.m */,
+				0A2ECB3C165861B4002BC099 /* JSONKit.h */,
+				0A2ECB3D165861B4002BC099 /* JSONKit.m */,
+				0A2ECB401658664B002BC099 /* ESPNNetworkingManager.h */,
+				0A2ECB411658664B002BC099 /* ESPNNetworkingManager.m */,
 				0A5B0F8716581BCD008F8DEE /* Supporting Files */,
 			);
 			path = EASYAPIFrontEnd;
@@ -116,15 +161,26 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		77BDA05D16583730005FE47B /* Images */ = {
+		0A5B0FA616581C63008F8DEE /* Object Views */ = {
 			isa = PBXGroup;
 			children = (
-				77BDA06016583B1E005FE47B /* Default-Portrait@2x~ipad.png */,
-				77BDA05E16583ADC005FE47B /* Default-Portrait~ipad.png */,
-				77BDA05B1658371D005FE47B /* logoeasyapi-144x144.png */,
-				77BDA058165836C2005FE47B /* logoeasyapi.png */,
+				0A5B0FA316581C5D008F8DEE /* EAPIKeyValueView.h */,
+				0A5B0FA416581C5D008F8DEE /* EAPIKeyValueView.m */,
+				0A5B0FA716581C7D008F8DEE /* EAPIDictionaryView.h */,
+				0A5B0FA816581C7D008F8DEE /* EAPIDictionaryView.m */,
 			);
-			name = Images;
+			name = "Object Views";
+			sourceTree = "<group>";
+		};
+		0A5B0FAD16581C98008F8DEE /* Adding */ = {
+			isa = PBXGroup;
+			children = (
+				0A5B0FAE16581CAE008F8DEE /* EAPIAddView.h */,
+				0A5B0FAF16581CAE008F8DEE /* EAPIAddView.m */,
+				0A5B0FB116581CC8008F8DEE /* EAPIAddingPopoverViewViewController.h */,
+				0A5B0FB216581CC8008F8DEE /* EAPIAddingPopoverViewViewController.m */,
+			);
+			name = Adding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,10 +240,6 @@
 				0A5B0F9516581BCD008F8DEE /* Default@2x.png in Resources */,
 				0A5B0F9716581BCD008F8DEE /* Default-568h@2x.png in Resources */,
 				0A5B0F9D16581BCD008F8DEE /* EAPIViewController.xib in Resources */,
-				77BDA059165836C2005FE47B /* logoeasyapi.png in Resources */,
-				77BDA05C1658371D005FE47B /* logoeasyapi-144x144.png in Resources */,
-				77BDA05F16583ADC005FE47B /* Default-Portrait~ipad.png in Resources */,
-				77BDA06116583B1E005FE47B /* Default-Portrait@2x~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +253,14 @@
 				0A5B0F8D16581BCD008F8DEE /* main.m in Sources */,
 				0A5B0F9116581BCD008F8DEE /* EAPIAppDelegate.m in Sources */,
 				0A5B0F9A16581BCD008F8DEE /* EAPIViewController.m in Sources */,
+				0A5B0FA516581C5D008F8DEE /* EAPIKeyValueView.m in Sources */,
+				0A5B0FA916581C7D008F8DEE /* EAPIDictionaryView.m in Sources */,
+				0A5B0FB016581CAE008F8DEE /* EAPIAddView.m in Sources */,
+				0A5B0FB316581CC8008F8DEE /* EAPIAddingPopoverViewViewController.m in Sources */,
+				0A2ECB3E165861B4002BC099 /* JSONKit.m in Sources */,
+				0A2ECB421658664B002BC099 /* ESPNNetworkingManager.m in Sources */,
+				0A2ECB4A16588456002BC099 /* EAPICreateCustomObjectViewController.m in Sources */,
+				0A2ECB4F1658AD28002BC099 /* UIColor+Hex.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
